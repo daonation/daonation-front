@@ -1,6 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
-import { ethers } from "ethers";
+import { connectMetamask } from "./connect";
+
 
 interface propsButton {
     height: number,
@@ -9,8 +10,10 @@ interface propsButton {
 
 
 export default function ButtonConnect(  props:propsButton ){
+    const [provider, setProvider] = useState();
     return (
-        <ConnectStyle height={props.height} width={props.width}>
+        <ConnectStyle onClick={connectMetamask}
+        height={props.height} width={props.width}>
             <h3>CONECTAR WALLET</h3>
         </ConnectStyle>
     );
