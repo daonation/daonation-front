@@ -21,6 +21,7 @@ const FooterStyle = styled.div`
     display: flex;
     flex-direction: row;
     bottom: 0;
+    background:black;
     left: 0;
     right: 0;
     width: 100%;

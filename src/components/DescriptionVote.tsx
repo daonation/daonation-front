@@ -6,7 +6,7 @@ import BarHorizontal from "./BarHorizontal";
 
 export default function DescriptionVote() {
     return (
-        <HomeStyle>
+        <DescriptionVoteStyle>
             <Header />
             <TitleStyle>
                 <p>Cruz Vermelha Brasileira</p>
@@ -55,15 +55,18 @@ export default function DescriptionVote() {
                 </BlockStyle3>
             </BodyStyle>
             <Footer></Footer>
-        </HomeStyle>
+        </DescriptionVoteStyle>
 
     );
 }
 
-const HomeStyle = styled.div`
+const DescriptionVoteStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
+    
+    padding-bottom: 15px;
+    overflow-y: scroll;
 
 `;
 const BodyStyle = styled.div`

@@ -7,7 +7,7 @@ import {useNavigate} from "react-router-dom";
 export default function About(){
     const history = useNavigate();
     return(
-        <HomeStyle>
+        <AboutStyle>
             <Header/>
             <BodyStyle>
             <BlockStyle1>
@@ -57,15 +57,19 @@ export default function About(){
             </BlockStyle1>
             </BodyStyle>
             <Footer></Footer>
-        </HomeStyle>
+        </AboutStyle>
         
     );
 }
 
-const HomeStyle = styled.div`
+const AboutStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    padding-bottom: 15px;
+    overflow-y: scroll;
 `;
 const BodyStyle = styled.div`
     display: flex;

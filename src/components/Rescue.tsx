@@ -71,6 +71,8 @@ const RescueStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
+    padding-bottom: 15px;
+    overflow-y: scroll;
 
 `;
 const BodyStyle = styled.div`
