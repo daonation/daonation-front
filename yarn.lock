@@ -1193,6 +1193,11 @@
   resolved "https://registry.yarnpkg.com/@csstools/selector-specificity/-/selector-specificity-2.0.2.tgz#1bfafe4b7ed0f3e4105837e056e0a89b108ebe36"
   integrity sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==
 
+"@daonations/typechain@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@daonations/typechain/-/typechain-1.0.1.tgz#4e573ad6ea133b485f8a46f557ba6543d4bce169"
+  integrity sha512-rPpyG/5nPTfIQ5gz3c+OqQu/tTWLOesW8URaKVbDr35gQklU3h1Z+kWN6DEVxC9AQBeJr6BPkR0Yw5oxC6s//w==
+
 "@emotion/is-prop-valid@^1.1.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-1.2.0.tgz#7f2d35c97891669f7e276eb71c83376a5dc44c83"
