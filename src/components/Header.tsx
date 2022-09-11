@@ -1,29 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import ButtonConnect from "./ButtonConnect";
-import {useNavigate, useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 export default function Header(){
 
     const history = useNavigate();
-    const location = useLocation();
-    
-    function getNameLocation(nameLink:string):boolean{
-        if(location.pathname == nameLink){
-            return true;
-        }
-        return false;
-    }
-
     return(
         
         <HeaderStyle>
             <LogoImg src={"/static/logoHome.png"} alt=""/>
             <ButtonList >
-                <TitleStyle onClick={() => history("/")}  location={getNameLocation("/")} >Doe</TitleStyle>
-                <TitleStyle onClick={() => history("/vote")} location={getNameLocation("/vote")}>Em votação</TitleStyle>
-                <TitleStyle onClick={() => history("/redeem")} location={getNameLocation("/redeem")}>Resgate tokens</TitleStyle>
-                <TitleStyle onClick={() => history("/dao")} location={getNameLocation("/dao")}>DAO</TitleStyle>
+                <h1 onClick={() => history("/")} >Doe</h1>
+                <h2 onClick={() => history("/vote")}>Em votação</h2>
+                <h2 onClick={() => history("/redeem")}>Resgate tokens</h2>
+                <h2 onClick={() => history("/dao")}>DAO</h2>
                 <ButtonConnect height={75} width={240}/>
 
             </ButtonList>
@@ -50,8 +41,9 @@ const HeaderStyle = styled.div`
 `;
 
 const LogoImg = styled.img`
-    width: 280px;
+    width: 200px;
     height: 62px;
+    margin-top: 20px;
 `;
 
 const ButtonList = styled.div`
@@ -60,20 +52,14 @@ const ButtonList = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 60%;
-    h1{
+    h1,h2{
         font-size: 21px;
         :hover{
             text-decoration: underline;
             cursor: pointer;
         }
     }
-`;
-
-const TitleStyle = styled.h1<{location: boolean}>`
-    font-size: 21px;
-    :hover{
-        text-decoration: underline;
-        cursor: pointer;
+    h1{
+        color: #2BFFD9;
     }
-    ${props => props.location==true ? 'color: #43B6A1;' : ""}
 `;

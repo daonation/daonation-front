@@ -18,9 +18,11 @@ export default function Home(){
             <HomeContent>
                 <h1>Lista de Vaquinhas</h1>
                 <CardsListStyle>
-                    <CardStyle onClick={() => history("/description")}><Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/></CardStyle>
-                    <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/>
-                    <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/> 
+                    <CardStyle onClick={() => history("/description")}>
+                        <Card typeCard="home" title="Cruz Vermelha" price={1000} description="Atenuar o sofrimento humano sem distinção de raça, religião, condição social, gênero e opinião política."/>
+                    </CardStyle>
+                    <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Invista no melhor evento do Brasil e ajude a crescer a comunidade web3 na América Latina."/>
+                    <Card typeCard="home" title="Bia com a Seleção" price={1000} description="Ajude Bia Maximo, convocada para a seleção brasileira feminina de Polo Aquático SUB 16 na Colômbia."/> 
                 </CardsListStyle>
             </HomeContent>
             <Footer/>
@@ -47,6 +49,8 @@ const HomeContent = styled.div`
     overflow-y: scroll;
     h1{
         font-size: 40px;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
 `;
 
@@ -60,8 +64,9 @@ const CardsListStyle = styled.div`
 `;
 const CardStyle = styled.div`
 display: flex;
-flex-direction: row;
+    flex-wrap: wrap;
     :hover{
         cursor: pointer;
     }
+
 `;

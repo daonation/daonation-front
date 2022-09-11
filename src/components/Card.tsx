@@ -94,12 +94,13 @@ const CardStyle = styled.div`
     width: 45%;
     height: 250px;
     border: 1px solid #7C7C7C;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 8px;
+    box-shadow: 6px 6px #7C7C7C;
 `;
 
 const DataStyle = styled.div`
@@ -117,4 +118,5 @@ const ImgStyle = styled.img`
     aspect-ratio: 1;
     border: 1px solid #7C7C7C;
     border-radius: 9px;
+    margin-left:2px;
 `;

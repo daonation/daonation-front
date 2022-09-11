@@ -145,7 +145,7 @@ const BlockStyle1 = styled.div`
     height: 50px;
     padding-top: 5%;
     margin-top: 20px;
-    margin-left: 35%;
+    margin-left: 30%;
     border-radius: 20px;
     padding-bottom: 30px;
     text-align: center;
@@ -165,7 +165,7 @@ const BlockStyle1 = styled.div`
     height: 50px;
     padding-top: 5%;
     margin-top: 20px;
-    margin-left: 35%;
+    margin-left: 30%;
     border-radius: 20px;
     padding-bottom: 30px;
     text-align: center;
