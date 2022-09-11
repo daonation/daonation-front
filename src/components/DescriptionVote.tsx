@@ -66,21 +66,24 @@ const DescriptionVoteStyle = styled.div`
     color: #7C7C7C;
     
     padding-bottom: 15px;
-    overflow-y: scroll;
 
 `;
 const BodyStyle = styled.div`
     display: flex;
     flex-direction: row;
-
+    position: fixed;
+    bottom: 90px;
+    top: 180px;
+    overflow-y: scroll;
 `;
 
 const TitleStyle = styled.div`
-font-size: 400%;
-padding-top: 30px;
-text-align: center;
-color: #95CAFA;
-font-weight:600;
+    font-size: 400%;
+    padding-top: 30px;
+    text-align: center;
+    color: #95CAFA;
+    font-weight:600;
+
 
 `;
 

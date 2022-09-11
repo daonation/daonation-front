@@ -1,17 +1,27 @@
+import { useContext} from "react";
 import styled from "styled-components";
 import BarHorizontal from "./BarHorizontal";
-
+import { getContracts } from "@daonations/typechain/dist/deployed/index";
+import EthersContext from "../contexts/EthersContext";
 interface propsCard {
     typeCard: string,
     title: string,
     price: number,
-    description: string,
+    description?: string,
     initialDate?: string,
     finalDate?: string,
-    onClick?: any
+    onClick?: any,
+    children?: any,
+    id?: any
 }
 
 export default function Card(props:propsCard){
+    const {signer, provider, block} = useContext(EthersContext );
+    //@ts-ignore
+    const { daonation } = getContracts(null as any, signer);
+    async function callFunc(){
+        await daonation.donate(props.id, 1);
+    }
  return(
     <CardStyle>
         <DataStyle>
@@ -21,6 +31,7 @@ export default function Card(props:propsCard){
                 <h1>{props.title}</h1>
                 <div> <img src="/static/DAIcon.png" alt=""/> <h4>{props.price.toLocaleString("en-US")}</h4> </div>
                 <p>{props.description}</p>
+                <ButtonSt onClick={callFunc}>Doar</ButtonSt>
 
             </DataCardHomeStyle>
             :
@@ -36,6 +47,15 @@ export default function Card(props:propsCard){
     </CardStyle>
  );
 }
+
+const ButtonSt = styled.button`
+    border: none;
+    margin-top: 10px;
+    background: #2AFFD9;
+    :hover{
+        cursor:pointer;
+    }
+`;
 
 const DataCardHomeStyle = styled.div`
     display: flex;

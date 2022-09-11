@@ -4,8 +4,8 @@ import Card from "./Card";
 import Footer from "./Footer";
 import Header from "./Header";
 import {useNavigate} from "react-router-dom";
-import { ethers } from "ethers";
-import { getContracts } from "@daonations/typechain/deployed/index";
+import { ethers, BigNumber } from "ethers";
+import { getContracts } from "@daonations/typechain/dist/deployed/index";
 import EthersContext from "../contexts/EthersContext";
 
 export default function Home(){
@@ -13,7 +13,18 @@ export default function Home(){
     const history = useNavigate();  
     const {signer, provider, block} = useContext(EthersContext);
 
-    const [vaquinhas, setVaquinhas] = useState<Array<any>>([]);
+    const [vaquinhas, setVaquinhas] = useState<Array<
+    {
+        description: string;
+        expectedValue: BigNumber;
+        votationEndTimestamp: BigNumber;
+        donationEndTimestamp: BigNumber;
+        aprovadores: BigNumber;
+        detratores: BigNumber;
+        donations: BigNumber;
+        donationsTo: string;
+        donationsRedeemed: boolean;
+      }>>([]);
 
     useEffect(() => {
         if(signer){
@@ -30,7 +41,7 @@ export default function Home(){
                     const vaquinhaInfo =  await daonation.vaquinhas(idx);
 
                     if(await daonation.isDonating(idx)){
-                        donationVaquinhas.push(vaquinhaInfo);
+                        donationVaquinhas.push({...vaquinhaInfo, "id": idx});
                     }
                     return vaquinhaInfo;
                 }));
@@ -46,6 +57,13 @@ export default function Home(){
             <HomeContent>
                 <h1>Lista de Vaquinhas</h1>
                 <CardsListStyle>
+                    {vaquinhas.map( (vaquinha,  idx) => {
+                        return(
+
+                        <Card  id={(vaquinha as any).id} key={idx}  typeCard="home" onClick={() => history("/description")} description={vaquinha.description } price={parseFloat(ethers.utils.formatEther(vaquinha.expectedValue))} title={vaquinha.description} >
+
+                        </Card>);
+                    })}
                     <Card onClick={() => history("/description")}  typeCard="home" title="Cruz Vermelha" price={1000} description="Atenuar o sofrimento humano sem distinção de raça, religião, condição social, gênero e opinião política."/>
                     <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Invista no melhor evento do Brasil e ajude a crescer a comunidade web3 na América Latina."/>
                     <Card typeCard="home" title="Bia com a Seleção" price={1000} description="Ajude Bia Maximo, convocada para a seleção brasileira feminina de Polo Aquático SUB 16 na Colômbia."/> 
