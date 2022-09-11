@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle `
         font-family: 'Spinnaker', sans-serif;
         justify-content:center;
         background: #FFFFFF;
+        color: #7C7C7C;
     }
     ol, ul {
         list-style: none;
