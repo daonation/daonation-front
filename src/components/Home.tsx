@@ -1,23 +1,49 @@
-import React from "react";
+import React, {useContext, useState, useEffect} from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import Footer from "./Footer";
 import Header from "./Header";
 import {useNavigate} from "react-router-dom";
 import { ethers } from "ethers";
-import { Daonation__factory } from "@daonations/typechain/typechain-types/factories/contracts/Daonation__factory";
+import { getContracts } from "@daonations/typechain/dist/deployed/index";
+import EthersContext from "../contexts/EthersContext";
 
 export default function Home(){
 
-    const history = useNavigate();
-    //const dao = Daonation__factory.connect(ethers.constants.AddressZero, signer)
-    //dao.filters.VoteAgainstVaquinha()
+    const history = useNavigate();  
+    const {signer, provider, block} = useContext(EthersContext);
+
+    const [vaquinhas, setVaquinhas] = useState<Array<any>>([]);
+
+    useEffect(() => {
+        if(signer){
+            const { daonation } = getContracts(null as any, signer);
+            ((async () => {
+                const vaquinhasCount = await  daonation.vaquinhasCount();
+                const indices = [];
+                for(let i:number = vaquinhasCount.toNumber() -1; i >=0; i--){
+                    indices.push(i);
+                }
+                setVaquinhas(await Promise.all(indices.map ( (idx) => {
+                    return daonation.vaquinhas(idx);
+                })));
+            }))();
+    
+        }
+        
+    }, [block]);
+
+    console.log(vaquinhas);
+    
+
+
     return(
         <HomeStyle>
             <Header/>
             <HomeContent>
                 <h1>Lista de Vaquinhas</h1>
                 <CardsListStyle>
+                    
                     <CardStyle onClick={() => history("/description")}><Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/></CardStyle>
                     <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/>
                     <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/> 

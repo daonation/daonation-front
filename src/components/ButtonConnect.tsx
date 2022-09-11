@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 import styled from "styled-components";
+import EthersContext from "../contexts/EthersContext";
 import { connectMetamask } from "./connect";
+ import { ethers} from "ethers"
 
 
 interface propsButton {
@@ -10,11 +12,24 @@ interface propsButton {
 
 
 export default function ButtonConnect(  props:propsButton ){
-    const [provider, setProvider] = useState();
+    const [address, setAddres] = useState("");
+    const {signer, provider, setSigner, setProvider, setBlock} = useContext (EthersContext);
+
+    async function connect(){
+        const [signerMeta, providerMeta] =  await connectMetamask();
+        setSigner && setSigner(signerMeta);
+        setProvider && setProvider(providerMeta);
+        setAddres(await signerMeta.getAddress());
+        providerMeta.on("block", (blockNumber:number) => {
+            setBlock(blockNumber);
+            console.log(blockNumber);
+        });
+    }
+    
     return (
-        <ConnectStyle onClick={connectMetamask}
+        <ConnectStyle onClick={connect}
         height={props.height} width={props.width}>
-            <h3>CONECTAR WALLET</h3>
+            <h3>{address == "" ? "CONECTAR WALLET" : address}</h3>
         </ConnectStyle>
     );
 }
@@ -29,6 +44,7 @@ const ConnectStyle = styled.div<{height: number; width: number;}>`
     border-radius: ${props => props.width/15}px;
     cursor: pointer;
     color: #7C7C7C;
+    overflow: hidden;
     h3{
         color: #7C7C7C;
         font-size: ${props => props.width*0.085}px;

@@ -4,10 +4,12 @@ import Card from "./Card";
 import Footer from "./Footer";
 import Header from "./Header";
 import {useNavigate} from "react-router-dom";
+import { getContracts } from "@daonations/typechain/deployed/index";
 
 
 export default function Vote(){
     const history = useNavigate();
+    
     return(
         <HomeStyle>
             <Header/>
