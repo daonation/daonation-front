@@ -133,6 +133,9 @@ const BlockStyle1 = styled.div`
     font-size: 120%;
     font-weight: 600;
     color: #555252;
+    :hover{
+        cursor: pointer;
+    }
 
     `;
     const ButtonStyle2 = styled.div`
@@ -150,6 +153,9 @@ const BlockStyle1 = styled.div`
     font-size: 120%;
     font-weight: 600;
     color: #555252;
+    :hover{
+        cursor: pointer;
+    }
 
     `;
     const ButtonStyle3 = styled.div`
@@ -167,6 +173,9 @@ const BlockStyle1 = styled.div`
     font-size: 120%;
     font-weight: 600;
     color: #FFFFFF;
+    :hover{
+        cursor: pointer;
+    }
 
     `;
 
