@@ -31,25 +31,25 @@ export default function Home(){
             </BlockStyle1>
             <BlockStyle2>
             <p>Quantidade de Tokens distribuídos</p>
-            <p>3141592/ 65358979</p>
+            <h1>3141592/ 65358979</h1>
             <br ></br>
             <p>Quantidade de tokens resgatados</p>
-            <p>323846</p>
+            <h1>323846</h1>
             <br ></br>
             <p>Quantidade de tokens para resgatar</p>
-            <p>26433</p>
+            <h1>26433</h1>
             <ButtonStyle1>
             <p>RESGATE</p>
             </ButtonStyle1>
             <BlockStyle3>
             <BlockStyle4>
-            <h1>Para adquirir mais tokens</h1>
+            <h2>Para adquirir mais tokens</h2>
             <ButtonStyle2>
             <p>DOAR</p>
             </ButtonStyle2>
             </BlockStyle4>
             <BlockStyle4>
-            <h1>Para participar de votações</h1>
+            <h2>Para participar de votações</h2>
             <ButtonStyle3>
             <p>VOTAR</p>
             </ButtonStyle3>
@@ -109,9 +109,7 @@ const BlockStyle1 = styled.div`
     border-radius: 30px;
     text-align: center;
     h1{
-        font-size: 150%;
-        padding-top: 25px;
-        text-align: center;
+        font-weight:600;
     }
 
     `;
@@ -119,11 +117,11 @@ const BlockStyle1 = styled.div`
     const ButtonStyle1 = styled.div`
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 80%;
     height: 50px;
     padding-top: 2%;
     margin-top: 20px;
-    margin-left: 35%;
+    margin-left: 10%;
     border: 1px solid #7C7C7C;
     border-radius: 20px;
     padding-bottom: 30px;
@@ -186,13 +184,11 @@ const BlockStyle4 = styled.div`
     height: 200px;
     padding-top: 30px;
     padding-left: 5%;
-    padding-right: 0%;
-    margin-right: 5%;
     margin-top: 30px;
     border: 1px solid #7C7C7C;
     border-radius: 30px;
     text-align: center;
-    h1{
+    h2{
         font-size: 150%;
         padding-top: 25px;
         text-align: center;
