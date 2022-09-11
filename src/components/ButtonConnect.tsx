@@ -28,13 +28,13 @@ const ConnectStyle = styled.div<{height: number; width: number;}>`
     justify-content: center;
     border-radius: ${props => props.width/15}px;
     cursor: pointer;
-    color: #000000;
+    color: #7C7C7C;
     h3{
-        color: #000000;
+        color: #7C7C7C;
         font-size: ${props => props.width*0.085}px;
         :hover{
             text-decoration: none;
-            color: #000000;
+            color: #7C7C7C;
         }
     }
 `;

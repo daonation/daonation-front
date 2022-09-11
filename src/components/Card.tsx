@@ -25,7 +25,7 @@ export default function Card(props:propsCard){
             :
             <></>}
         </DataStyle>
-        <BarHorizontal type="voting" perc={75}/>
+        <BarHorizontal type={props.typeCard} perc={75}/>
 
     </CardStyle>
  );
