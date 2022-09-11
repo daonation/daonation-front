@@ -25,11 +25,15 @@ export default function ButtonConnect(  props:propsButton ){
             console.log(blockNumber);
         });
     }
-    
+    function showAddress(add:string){
+        const str1 = add[0]+add[1]+add[2]+add[3]+add[4]+add[5];
+        const str2 = add[add.length -3]+add[add.length-2]+add[add.length-1];
+        return str1 + "..." + str2;
+    }
     return (
         <ConnectStyle onClick={connect}
         height={props.height} width={props.width}>
-            <h3>{address == "" ? "CONECTAR WALLET" : address}</h3>
+            <h3>{address == "" ? "CONECTAR WALLET" : showAddress(address)}</h3>
         </ConnectStyle>
     );
 }
