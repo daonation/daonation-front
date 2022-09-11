@@ -66,12 +66,10 @@ const HomeStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
-
 `;
 const BodyStyle = styled.div`
     display: flex;
     flex-direction: row;
-
 `;
 
 const BlockStyle1 = styled.div`
@@ -95,7 +93,6 @@ const BlockStyle1 = styled.div`
         padding-top: 25px;
         padding-bottom: 25px;
     }
-
     `;
     const BlockStyle2 = styled.div`
     display: flex;
@@ -108,7 +105,6 @@ const BlockStyle1 = styled.div`
     h1{
         font-weight:600;
     }
-
     `;
     const ButtonStyle1 = styled.div`
     display: flex;
@@ -127,6 +123,5 @@ const BlockStyle1 = styled.div`
     :hover{
         cursor: pointer;
     }
-
     `;
     

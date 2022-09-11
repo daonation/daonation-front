@@ -23,14 +23,14 @@ const Container = styled.div`
     flex-direction: row;
     align-items: center;
     p{
-        color: #2AFFD9;
+        color: #7C7C7C;
     }
 `;
 
 const BarStyle = styled.div<Bar>`
     height: 25px;
     width: ${props => props.type === "voting" ? '80%' : '43%'};
-    background: ${props => props.type === "voting" ? '#FF6B6B' : "#FFFFFF"};
+    background: ${props => props.type === "voting" ? "#FF6B6B;" : "#FFFFFF"};
     border: 1px solid #7C7C7C;
     border-radius: 10px;
     margin-right: 20px;
@@ -47,6 +47,9 @@ const BarSmall = styled.div<Bar>`
     border-top: 0;
     border-bottom: 0;
     border-radius: 10px;
+    border: 1px solid #7C7C7C;
+    margin-top: ${props => props.type === "voting" ? "-1px;" : ""};
+    margin-left:-1px;
     height: 25px;
     background: #2AFFD9;
     z-index: 1;

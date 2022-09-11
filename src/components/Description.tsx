@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import BarHorizontal from "./BarHorizontal";
 
-export default function Home(){
+export default function Description(){
     return(
         <HomeStyle>
             <Header/>

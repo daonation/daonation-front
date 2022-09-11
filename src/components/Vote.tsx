@@ -11,27 +11,27 @@ export default function Vote(){
     const history = useNavigate();
     
     return(
-        <HomeStyle>
+        <VoteStyle>
             <Header/>
-            <HomeContent>
+            <VoteContent>
                 <h1>Lista de Vaquinhas</h1>
                 <CardsListStyle>
-                    <CardStyle onClick={() => history("/descriptionvote")}><Card typeCard="voting" title="Ajude a EthSP"  initialDate={'09/09/2022'} finalDate={'17/09/2022'} price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/></CardStyle>
-                    <Card typeCard="voting" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/>
-                    <Card typeCard="voting" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the"/>
+                    <CardStyle onClick={() => history("/descriptionvote")}><Card typeCard="voting" title="Ajude a EthSP"  initialDate={'09/09/2022'} finalDate={'17/09/2022'} price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/></CardStyle>
+                    <Card typeCard="voting" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
+                    <Card typeCard="voting" title="Ajude a EthSP" price={1000} description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
                 </CardsListStyle>
-            </HomeContent>
+            </VoteContent>
             <Footer/>
-        </HomeStyle>
+        </VoteStyle>
     );
 }
 
-const HomeStyle = styled.div`
+const VoteStyle = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
-const HomeContent = styled.div`
+const VoteContent = styled.div`
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,8 @@ const HomeContent = styled.div`
     overflow-y: scroll;
     h1{
         font-size: 40px;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
 `;
 
