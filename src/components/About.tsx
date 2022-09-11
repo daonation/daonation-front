@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
+import {useNavigate} from "react-router-dom";
 
 export default function About(){
+    const history = useNavigate();
     return(
         <HomeStyle>
             <Header/>
@@ -50,7 +52,7 @@ export default function About(){
                     instituições de caridade, escolas, organizações religiosas e muito mais e reduza 
                     os encargos fiscais e aumente a segurança de que está investindo em um projeto validado.</p>
                     <ButtonStyle1>
-            <p>DOAR</p>
+            <p onClick={() => history("/")}>DOAR</p>
             </ButtonStyle1>
             </BlockStyle1>
             </BodyStyle>
@@ -77,7 +79,7 @@ const BlockStyle1 = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100px;
-    padding-top: 5%;
+    padding-top: 2%;
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 100px;
@@ -122,6 +124,9 @@ const BlockStyle1 = styled.div`
     font-size: 120%;
     font-weight: 600;
     color: #555252;
+    :hover{
+        cursor: pointer;
+    }
 
     `;
     
