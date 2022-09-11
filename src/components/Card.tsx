@@ -15,7 +15,7 @@ export default function Card(props:propsCard){
  return(
     <CardStyle>
         <DataStyle>
-            <ImgStyle src="http://www.cruzvermelha.org.br/wp-content/uploads/2020/03/WhatsApp-Image-2020-03-04-at-11.18.30-740x426.jpeg" alt=""/>
+            <ImgStyle src="/static/cruzvermelha.png" alt=""/>
             {props.typeCard === "home" ? 
             <DataCardHomeStyle>
                 <h1>{props.title}</h1>

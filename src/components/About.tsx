@@ -69,11 +69,15 @@ const AboutStyle = styled.div`
     margin-top: 10px;
     margin-bottom: 90px;
     padding-bottom: 15px;
-    overflow-y: scroll;
 `;
 const BodyStyle = styled.div`
+    position: fixed;
+    top: 100px;
+    bottom: 90px;
     display: flex;
     flex-direction: row;
+    overflow-y: scroll;
+
 `;
 
 const BlockStyle1 = styled.div`
