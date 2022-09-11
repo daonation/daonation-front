@@ -4,61 +4,59 @@ import Footer from "./Footer";
 import Header from "./Header";
 import BarHorizontal from "./BarHorizontal";
 
-export default function Home(){
-    return(
+export default function DescriptionVote() {
+    return (
         <HomeStyle>
-            <Header/>
+            <Header />
             <TitleStyle>
                 <p>Cruz Vermelha Brasileira</p>
-                </TitleStyle>
+            </TitleStyle>
             <BodyStyle>
-                
-            <BlockStyle1>
-            <DonationImg src={"/static/cruzvermelha.png"} alt="Donation Image"/>
-                <h1>Sobre</h1>
-                <p>DAOnation vem como um intermediário entre as pessoas que procuram ajuda 
-                    com vaquinhas (como ONGs) e pessoas que têm dinheiro para fazê-lo e 
-                    querem ajudar, mas procuram fazer isso para projetos significativos e 
-                    confiáveis. Nosso objetivo é criar uma plataforma onde você possa postar 
-                    sua vaquinha e após ser votado pelos detentores de tokens de governança, 
-                    ela estará disponível para os usuários doarem, garantindo o uso adequado 
-                    de seus ativos em benefício de terceiros.</p>
-                    
-            </BlockStyle1>
-            <BlockStyle3>
-            <BlockStyle2>
-            <p>Meta</p>
-            <DaiImg src="/static/DAIcon.png" alt=""/> <InstitutionStyle>10000000</InstitutionStyle>
-            <br></br>
-            <BarHorizontal type="voti" perc={75}/>
-            <br></br>
-            <BarHorizontal type="voti" perc={75}/>
-            <br></br>
-            <BarHorizontal type="voti" perc={75}/>
-            <ButtonStyle1>
-            <p>Apoiar</p>
-            </ButtonStyle1>
-            <ButtonStyle2>
-            <p>Rejeitar</p>
-            </ButtonStyle2>
-            </BlockStyle2>
-            <BlockStyle2>
-            <InstitutionImg src={"/static/instituicao.png"} alt="Donation Image"/>
-            <InstitutionStyle>
-            <p>Cruz Vermelha Brasileira
-            <br></br>
-Rio de Janeiro/DF
-<br></br>
-Ativo na DAOnation desde abril de 2022
-<br></br><br></br>
-2 vaquinhas criadas e 1 vaquinha apoiada</p>
-</InstitutionStyle>
-            </BlockStyle2>
-            </BlockStyle3>
+
+                <BlockStyle1>
+                    <DonationImg src={"/static/cruzvermelha.png"} alt="Donation Image" />
+                    <h1>Sobre</h1>
+                    <p>DAOnation vem como um intermediário entre as pessoas que procuram ajuda
+                        com vaquinhas (como ONGs) e pessoas que têm dinheiro para fazê-lo e
+                        querem ajudar, mas procuram fazer isso para projetos significativos e
+                        confiáveis. Nosso objetivo é criar uma plataforma onde você possa postar
+                        sua vaquinha e após ser votado pelos detentores de tokens de governança,
+                        ela estará disponível para os usuários doarem, garantindo o uso adequado
+                        de seus ativos em benefício de terceiros.</p>
+
+                </BlockStyle1>
+                <BlockStyle3>
+                    <BlockStyle2>
+                        <p>Meta</p>
+                        <DaiImg src="/static/DAIcon.png" alt="" /> <InstitutionStyle>10000000</InstitutionStyle>
+                        <p>Apoiado</p>
+                        <BarHorizontal type="voti" perc={75} />
+                        <p>Rejetado</p>
+                        <BarHorizontal type="voti" perc={10} />
+                        <ButtonStyle1>
+                            <p>Apoiar</p>
+                        </ButtonStyle1>
+                        <ButtonStyle2>
+                            <p>Rejeitar</p>
+                        </ButtonStyle2>
+                    </BlockStyle2>
+                    <BlockStyle2>
+                        <InstitutionImg src={"/static/instituicao.png"} alt="Donation Image" />
+                        <InstitutionStyle>
+                            <p>Cruz Vermelha Brasileira
+                                <br></br>
+                                Rio de Janeiro/DF
+                                <br></br>
+                                Ativo na DAOnation desde abril de 2022
+                                <br></br><br></br>
+                                2 vaquinhas criadas e 1 vaquinha apoiada</p>
+                        </InstitutionStyle>
+                    </BlockStyle2>
+                </BlockStyle3>
             </BodyStyle>
             <Footer></Footer>
         </HomeStyle>
-        
+
     );
 }
 
@@ -84,6 +82,7 @@ font-weight:600;
 `;
 
 
+
 const BlockStyle1 = styled.div`
     display: inline-block;
     flex-direction: column;
@@ -103,11 +102,11 @@ const BlockStyle1 = styled.div`
     }
 
     `;
-    const BlockStyle2 = styled.div`
+const BlockStyle2 = styled.div`
     display: inline-block;
     flex-direction: column;
     width: 100%;
-    height: 250px;
+    height:250px;
     padding-top: 30px;
     padding-left: 5%;
     margin-right: 10%;
@@ -121,7 +120,7 @@ const BlockStyle1 = styled.div`
 
     `;
 
-    const ButtonStyle1 = styled.div`
+const ButtonStyle1 = styled.div`
     display: inline-block;
     flex-direction: column;
     width: 20%;
@@ -138,7 +137,7 @@ const BlockStyle1 = styled.div`
 
     `;
 
-    const ButtonStyle2 = styled.div`
+const ButtonStyle2 = styled.div`
     display: inline-block;
     flex-direction: column;
     width: 20%;
@@ -155,7 +154,7 @@ const BlockStyle1 = styled.div`
     color: #555252;
 
     `;
-    const DonationImg = styled.img`
+const DonationImg = styled.img`
     width: 100%;
     height: 350px ;
     background-size: cover;
@@ -188,4 +187,4 @@ display: inline-block;
 padding-left: 2%;
 padding-top: 2%;
 `;
-    
+

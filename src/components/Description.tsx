@@ -62,12 +62,10 @@ const HomeStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
-
 `;
 const BodyStyle = styled.div`
     display: flex;
     flex-direction: row;
-
 `;
 
 const TitleStyle = styled.div`
@@ -76,7 +74,6 @@ padding-top: 30px;
 text-align: center;
 color: #95CAFA;
 font-weight:600;
-
 `;
 
 
@@ -97,7 +94,6 @@ const BlockStyle1 = styled.div`
         text-align: left;
         font-weight: 600;
     }
-
     `;
     const BlockStyle2 = styled.div`
     display: inline-block;
@@ -114,7 +110,6 @@ const BlockStyle1 = styled.div`
     h1{
         font-weight:600;
     }
-
     `;
 
     const ButtonStyle1 = styled.div`
@@ -131,7 +126,6 @@ const BlockStyle1 = styled.div`
     font-size: 120%;
     font-weight: 600;
     color: #555252;
-
     `;
 
     const DonationImg = styled.img`
@@ -167,4 +161,3 @@ display: inline-block;
 padding-left: 2%;
 padding-top: 2%;
 `;
-    

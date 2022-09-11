@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
+import {useNavigate} from "react-router-dom";
 
 export default function Rescue(){
+    const history = useNavigate();
     return(
-        <HomeStyle>
+        <RescueStyle>
             <Header/>
             <BodyStyle>
             <BlockStyle1>
@@ -45,25 +47,27 @@ export default function Rescue(){
             <BlockStyle4>
             <h2>Para adquirir mais tokens</h2>
             <ButtonStyle2>
-            <p>DOAR</p>
+            <p onClick={() => history("/")}>DOAR</p>
             </ButtonStyle2>
             </BlockStyle4>
+            <BlockStyle5>
+            </BlockStyle5>
             <BlockStyle4>
             <h2>Para participar de votações</h2>
             <ButtonStyle3>
-            <p>VOTAR</p>
+            <p onClick={() => history("/vote")}>VOTAR</p>
             </ButtonStyle3>
             </BlockStyle4>
             </BlockStyle3>
             </BlockStyle2>
             </BodyStyle>
             <Footer></Footer>
-        </HomeStyle>
+        </RescueStyle>
         
     );
 }
 
-const HomeStyle = styled.div`
+const RescueStyle = styled.div`
     display: flex;
     flex-direction: column;
     color: #7C7C7C;
@@ -183,6 +187,22 @@ const BlockStyle4 = styled.div`
     padding-left: 5%;
     margin-top: 30px;
     border: 1px solid #7C7C7C;
+    border-radius: 30px;
+    text-align: center;
+    h2{
+        font-size: 150%;
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    `;
+    const BlockStyle5 = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 2%;
+    height: 200px;
+    padding-top: 30px;
+    margin-top: 30px;
     border-radius: 30px;
     text-align: center;
     h2{
