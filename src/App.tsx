@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from './components/About';
 import GlobalStyle from "./components/GlobalStyle";
 import Home from "./components/Home";
 import Rescue from './components/Rescue';
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/redeem" element={<Rescue/>}/>
       <Route path="/vote" element={<Vote/>}/>
+      <Route path="/dao" element={<About/>}/>
 
     </Routes>
     </BrowserRouter>

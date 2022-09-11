@@ -5,7 +5,7 @@ import {FaTwitter, FaDiscord, FaTelegram, FaGithub} from "react-icons/fa";
 export default function Footer(){
     return(
         <FooterStyle>
-            <p>Copyright <span>DAO.nation</span> 2022</p>
+            <p>Copyright <span>DAOnation</span> 2022</p>
             <div>
                 <FaTwitter size={'2em'}/>
                 <FaGithub size={'2em'}/>

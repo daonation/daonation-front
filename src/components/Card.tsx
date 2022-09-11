@@ -6,8 +6,8 @@ interface propsCard {
     title: string,
     price: number,
     description: string,
-    initialDate?: Date,
-    finalDate?: Date
+    initialDate?: string,
+    finalDate?: string
 }
 
 export default function Card(props:propsCard){
@@ -23,7 +23,12 @@ export default function Card(props:propsCard){
 
             </DataCardHomeStyle>
             :
-            <></>}
+            <DataCardVoteStyle>
+                <h5>{'Período: ' + props.initialDate + ' - ' + props.finalDate}</h5>
+                <h1>{props.title}</h1>
+                <div> <img src="/static/DAIcon.png" alt=""/> <h4>{props.price.toLocaleString("en-US")}</h4> </div>
+                <p>{props.description}</p>
+            </DataCardVoteStyle>}
         </DataStyle>
         <BarHorizontal type={props.typeCard} perc={75}/>
 
@@ -52,6 +57,36 @@ const DataCardHomeStyle = styled.div`
         display: block;
        font-size: 15px;
        overflow: hidden;
+    }
+`;
+
+const DataCardVoteStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    div{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+        img{
+            margin-right: 15px;
+        }
+    }
+    h1{
+        font-size: 21px !important;
+    }
+    h2{
+        display: block;
+       font-size: 15px;
+       overflow: hidden;
+    }
+    h5{
+        font-weight: bold;
+        color: #43B6A1;
+        display: block;
+        margin-bottom: 5px;
     }
 `;
 
