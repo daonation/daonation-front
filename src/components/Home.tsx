@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import {useNavigate} from "react-router-dom";
 import { ethers } from "ethers";
-import { getContracts } from "@daonations/typechain/dist/deployed/index";
+import { getContracts } from "@daonations/typechain/deployed/index";
 import EthersContext from "../contexts/EthersContext";
 
 export default function Home(){
@@ -24,18 +24,21 @@ export default function Home(){
                 for(let i:number = vaquinhasCount.toNumber() -1; i >=0; i--){
                     indices.push(i);
                 }
-                setVaquinhas(await Promise.all(indices.map ( (idx) => {
-                    return daonation.vaquinhas(idx);
-                })));
+                const allVaquinhas = await Promise.all(indices.map ( async(idx) => {
+                    const donationVaquinhas = [];
+                    
+                    const vaquinhaInfo =  await daonation.vaquinhas(idx);
+
+                    if(await daonation.isDonating(idx)){
+                        donationVaquinhas.push(vaquinhaInfo);
+                    }
+                    return vaquinhaInfo;
+                }));
+                setVaquinhas(allVaquinhas);
+
             }))();
-    
         }
-
     }, [block]);
-
-    console.log(vaquinhas);
-    
-
 
     return(
         <HomeStyle>
