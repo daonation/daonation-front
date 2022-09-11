@@ -115,7 +115,6 @@ const BlockStyle1 = styled.div`
     height: 50px;
     padding-top: 2%;
     margin-top: 40px;
-    border: 1px solid #7C7C7C;
     border-radius: 20px;
     padding-bottom: 30px;
     text-align: center;
