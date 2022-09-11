@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from "styled-components";
+import {FaTwitter, FaDiscord, FaTelegram, FaGithub} from "react-icons/fa";
 
 export default function Footer(){
     return(
         <FooterStyle>
             <p>Copyright <span>DAO.nation</span> 2022</p>
-            <ImgSocial src="/static/socialMedias.png" alt=""/>
+            <div>
+                <FaTwitter size={'2em'}/>
+                <FaGithub size={'2em'}/>
+                <FaDiscord size={'2em'}/>
+                <FaTelegram size={'2em'}/>
+            </div>
         </FooterStyle>
     );
 }
@@ -24,8 +30,8 @@ const FooterStyle = styled.div`
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 13px;
-    padding-left: 10%;
-    padding-right: 8.5%;
+    padding-left: 1.5%;
+    padding-right: 2.5%;
     margin-top: 15px;
     p{
         span{
@@ -35,10 +41,12 @@ const FooterStyle = styled.div`
             }
         }
     }
+    div{
+        display: flex;
+        flex-direction: row;
+        width: 15%;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-`;
-
-const ImgSocial = styled.img`
-    height: 70px;
-    width: 15%;
 `;
