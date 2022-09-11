@@ -18,9 +18,7 @@ export default function Home(){
             <HomeContent>
                 <h1>Lista de Vaquinhas</h1>
                 <CardsListStyle>
-                    <CardStyle onClick={() => history("/description")}>
-                        <Card typeCard="home" title="Cruz Vermelha" price={1000} description="Atenuar o sofrimento humano sem distinção de raça, religião, condição social, gênero e opinião política."/>
-                    </CardStyle>
+                    <Card onClick={() => history("/description")}  typeCard="home" title="Cruz Vermelha" price={1000} description="Atenuar o sofrimento humano sem distinção de raça, religião, condição social, gênero e opinião política."/>
                     <Card typeCard="home" title="Ajude a EthSP" price={1000} description="Invista no melhor evento do Brasil e ajude a crescer a comunidade web3 na América Latina."/>
                     <Card typeCard="home" title="Bia com a Seleção" price={1000} description="Ajude Bia Maximo, convocada para a seleção brasileira feminina de Polo Aquático SUB 16 na Colômbia."/> 
                 </CardsListStyle>

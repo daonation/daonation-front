@@ -7,7 +7,8 @@ interface propsCard {
     price: number,
     description: string,
     initialDate?: string,
-    finalDate?: string
+    finalDate?: string,
+    onClick?: any
 }
 
 export default function Card(props:propsCard){
